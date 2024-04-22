@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "i18next": "^23.11.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "react-i18next": "^14.1.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "money-management-api",
+  "version": "1.0.0",
+  "description": "personal money-management",
+  "main": "index.js",
+  "author": "Sebas",
+  "license": "ISC"
+}
