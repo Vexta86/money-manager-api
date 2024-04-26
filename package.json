@@ -19,7 +19,7 @@
   "name": "money-management-api",
   "version": "1.0.0",
   "description": "personal money-management",
-  "main": "index.js",
+  "main": "server.js",
   "author": "Sebas",
   "license": "ISC"
 }

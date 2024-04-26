@@ -13,10 +13,10 @@ const mongoose = require('mongoose');
 
 
 // Routes imports
-const incomesRoutes = require('./api/routes/incomes');
-const outcomesRoutes = require('./api/routes/outcomes');
-const userRoutes = require('./api/routes/users');
-const frequentOutcomesRoutes = require('./api/routes/frequent-outcomes');
+const incomesRoutes = require('./api/components/incomes/incomes.route');
+const outcomesRoutes = require('./api/components/outcomes/outcomes.route');
+const userRoutes = require('./api/components/user/users.route');
+const frequentOutcomesRoutes = require('./api/components/frequent-outcomes/frequent-outcomes.route');
 
 // database set up
 mongoose.set('runValidators', true); // here is your global setting
@@ -49,7 +49,7 @@ app.use((error, req, res, next) => {
     res.status(error.status || 500);
     res.json({
         error: {
-            message: error
+            message: error.message || 'Something is very wrong'
         }
     });
 });

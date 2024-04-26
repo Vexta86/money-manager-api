@@ -91,6 +91,7 @@
     POST:
     body:
         {
+            "name": "sebastian",
             "email": "sebasrodsua05@gmail.com",
             "password": "password*123"
         }
