@@ -1,11 +1,14 @@
 // Importing packages
-const http = require("http");
-const app = require("./app");
+
+const express = require('express')
+const app = express()
 
 // Setting the environment variable for PORT
 const port = process.env.PORT || 8000;
-const hostname = 'localhost'
-const server = http.createServer(app);
-server.listen(port, hostname, ()=>{
-    console.log("listening on " + hostname + ':' + port);
-});
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
