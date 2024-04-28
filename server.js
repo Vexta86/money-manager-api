@@ -1,7 +1,10 @@
+
+
+
 // Importing packages
 
-const express = require('express')
-const app = express()
+
+const app = require('./app')
 
 // Setting the environment variable for PORT
 const port = process.env.PORT || 8000;
