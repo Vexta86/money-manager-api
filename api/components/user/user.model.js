@@ -12,7 +12,9 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String, 
-        required: true
+        required: true,
+        // Minimum eight characters, at least one letter, one number and one special character:
+        // match: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
     },
     name: {
         type: String,

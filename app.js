@@ -17,24 +17,26 @@ const incomesRoutes = require('./api/components/incomes/incomes.route');
 const outcomesRoutes = require('./api/components/outcomes/outcomes.route');
 const userRoutes = require('./api/components/user/users.route');
 const frequentOutcomesRoutes = require('./api/components/frequent-outcomes/frequent-outcomes.route');
+const pushNotificationsRoutes = require('./api/components/push-notifications/push.route');
 
 // database set up
 mongoose.set('runValidators', true); // here is your global setting
-mongoose.connect('mongodb+srv://sebasrosu:' + 'gzzBcQKctgBBvCil' +'@cluster0.37jkvst.mongodb.net/?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://sebasrosu:' + process.env.MONGO_PW +process.env.MONGO_CLUSTER).then();
 
 
 
-// Use mehtods for middlewares
+// Use methods for middlewares
 app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// Use mehtods for routes
+// Use methods for routes
 app.use('/incomes', incomesRoutes);
 app.use('/outcomes', outcomesRoutes);
 app.use('/user', userRoutes);
 app.use('/frequent-outcomes', frequentOutcomesRoutes);
+app.use('/push', pushNotificationsRoutes);
 
 
 // Catch-all route for unspecified paths

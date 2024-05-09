@@ -3,6 +3,7 @@
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
     "https": "^1.0.0",
@@ -11,10 +12,13 @@
     "mongoose": "^8.2.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
-    "react-i18next": "^14.1.0"
+    "react-i18next": "^14.1.0",
+    "urlsafe-base64": "^1.0.0",
+    "web-push": "^3.6.7"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "generate-vapid": "web-push generate-vapid-keys --json > ./api/components/push-notifications/vapid.json"
   },
   "name": "money-management-api",
   "version": "1.0.0",

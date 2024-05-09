@@ -1,6 +1,7 @@
 {
     "env": {
         "MONGO_PW": "gzzBcQKctgBBvCil",
-        "JWT_KEY": "AKGShf3737rf"
+        "JWT_KEY": "AKGShf3737rf",
+        "MONGO_CLUSTER": "@cluster0.37jkvst.mongodb.net/?retryWrites=true&w=majority"
     }
 }
