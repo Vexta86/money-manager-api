@@ -18,6 +18,7 @@ const outcomesRoutes = require('./api/components/outcomes/outcomes.route');
 const userRoutes = require('./api/components/user/users.route');
 const frequentOutcomesRoutes = require('./api/components/frequent-outcomes/frequent-outcomes.route');
 const pushNotificationsRoutes = require('./api/components/push-notifications/push.route');
+const savingGoalsRoutes = require('./api/components/saving-goals/savings.route');
 
 // database set up
 mongoose.set('runValidators', true); // here is your global setting
@@ -37,6 +38,7 @@ app.use('/outcomes', outcomesRoutes);
 app.use('/user', userRoutes);
 app.use('/frequent-outcomes', frequentOutcomesRoutes);
 app.use('/push', pushNotificationsRoutes);
+app.use('/saving-goals', savingGoalsRoutes);
 
 
 // Catch-all route for unspecified paths
