@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 
 exports.get_incomes = (req, res, next) => {
 
+    console.log('Geting incomes')
+
     // filtering by month
     const month = req.query.month; // Assuming the parameter is named 'month'
     const year = req.query.year; // Assuming the parameter is named 'month'
@@ -24,17 +26,18 @@ exports.get_incomes = (req, res, next) => {
         filter.date = { $gte: startOfMonth, $lte: endOfMonth };
     }
 
-    // display every incomes from that user
+    // display every income from that user
 
-    Income.find(filter)
-    .exec()
-    .then(docs =>{
-        res.status(200).json({docs: docs, userData: req.userData});
-    })
-    .catch(err =>  {
-        console.log(err);
-        res.status(500).json({error: err});
-    });
+    Income
+        .find(filter)
+        .exec()
+        .then(docs =>{
+            res.status(200).json({docs: docs, userData: req.userData});
+        })
+        .catch(err =>  {
+            console.log(err);
+            res.status(500).json({error: err});
+        });
 };
 
 exports.post_income =   (req,res,next)=>{
